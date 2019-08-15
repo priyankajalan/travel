@@ -30700,21 +30700,24 @@ var places = [{
 }, {
   id: "TH",
   name: "Thailand"
-}];
+}]; // keys help react which item in the list is added or removed and have crucial role
+// keys give stable identity to the element
 
 var PlaceCard = function PlaceCard(place) {
   return _react.default.createElement("div", {
-    className: "col-4"
+    className: "col-4",
+    key: place.id
   }, _react.default.createElement("div", {
     className: "card",
-    key: place.id,
     style: {
       width: "200px",
       height: "100px"
     }
   }, _react.default.createElement("div", {
+    className: "card-body"
+  }, _react.default.createElement("h5", {
     className: "card-title"
-  }, place.name)));
+  }, place.name), _react.default.createElement("p", null, "This is a description"))));
 };
 
 function ListCards() {
@@ -30912,7 +30915,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58662" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62840" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

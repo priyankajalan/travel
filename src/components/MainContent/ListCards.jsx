@@ -7,14 +7,15 @@ const places = [
   { id: "TH", name: "Thailand" }
 ];
 
+// keys help react which item in the list is added or removed and have crucial role
+// keys give stable identity to the element
 const PlaceCard = place => (
-  <div className="col-4">
-    <div
-      className="card"
-      key={place.id}
-      style={{ width: "200px", height: "100px" }}
-    >
-      <div className="card-title">{place.name}</div>
+  <div className="col-4" key={place.id}>
+    <div className="card" style={{ width: "200px", height: "100px" }}>
+      <div className="card-body">
+        <h5 className="card-title">{place.name}</h5>
+        <p>This is a description</p>
+      </div>
     </div>
   </div>
 );
